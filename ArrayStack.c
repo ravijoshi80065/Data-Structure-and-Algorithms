@@ -48,6 +48,17 @@ void showStack(struct ArrayStack *s1)
 	}
 }
 
+void delArrayStack(struct ArrayStack *s1)
+{
+	if(s1)
+	{
+		if(s1->array)
+		free(s1->array);
+		free(s1);
+	}
+	printf("\nfreed all the memory associated with stack......!!!!!!!1");
+}
+
 int main()
 {
 	int x,ch=0;
@@ -83,4 +94,7 @@ int main()
 				break;	
 		}
 	}
+	printf("\nDeleting the complete stack");
+	delArrayStack(stack1);
+	stack1=NULL;		
 }
